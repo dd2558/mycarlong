@@ -1,0 +1,50 @@
+oauth:
+  kakao:
+    client_id: "${spring.security.oauth2.client.registration.kakao.client-id}"  # REST API 키
+    redirect_uri: "${spring.security.oauth2.client.registration.kakao.redirect-uri}"
+    client_secret: "${spring.security.oauth2.client.registration.kakao.client-secret}" # Client Secret 키
+    scope: "${spring.security.oauth2.client.registration.kakao.scope}"
+
+  naver:
+    client_id: "${spring.security.oauth2.client.registration.naver.client-id}"
+    redirect_uri: "${spring.security.oauth2.client.registration.naver.redirect-uri}"
+    client_secret: "${spring.security.oauth2.client.registration.naver.client-secret}"
+    scope: "${spring.security.oauth2.client.registration.naver.scope}"
+
+server:
+  port: 8080
+spring:
+  application:
+    name: mycarlong-back
+  config:
+    import: oauthkey.properties
+
+  security:
+    user:
+      name: test@test.com
+      password: 12345
+
+      
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        jdbc:
+          time_zone: Asia/Seoul
+    hibernate:
+      ddl-auto: create
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl    
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ouath
+    username: dd2558
+    password: gkehddnjs10
+
+
+
+
+
+    
