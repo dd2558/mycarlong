@@ -1,4 +1,4 @@
-package com.mycarlong.mycarlongback.kakao;
+package com.mycarlong.mycarlongback.oauth;
 
 import org.springframework.stereotype.Service;
 

@@ -10,6 +10,12 @@ oauth:
     redirect_uri: "${spring.security.oauth2.client.registration.naver.redirect-uri}"
     client_secret: "${spring.security.oauth2.client.registration.naver.client-secret}"
     scope: "${spring.security.oauth2.client.registration.naver.scope}"
+  
+  google:
+    client_id: "${spring.security.oauth2.client.registration.google.client-id}"
+    redirect_uri: "${spring.security.oauth2.client.registration.google.redirect-uri}"
+    client_secret: "${spring.security.oauth2.client.registration.google.client-secret}"
+    scope: "${spring.security.oauth2.client.registration.google.scope}"
 
 server:
   port: 8080
@@ -24,7 +30,7 @@ spring:
       name: test@test.com
       password: 12345
 
-      
+
   jpa:
     properties:
       hibernate:

@@ -6,8 +6,8 @@ import java.security.SecureRandom;
 import org.springframework.stereotype.Component;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.mycarlong.mycarlongback.kakao.AuthCodeRequestUrlProvider;
-import com.mycarlong.mycarlongback.kakao.OauthServerType;
+import com.mycarlong.mycarlongback.oauth.AuthCodeRequestUrlProvider;
+import com.mycarlong.mycarlongback.oauth.OauthServerType;
 
 import lombok.RequiredArgsConstructor;
 
@@ -21,10 +21,6 @@ public class NaverAuthCodeRequestUrlProvider implements AuthCodeRequestUrlProvid
     public OauthServerType supportServer() {
         return OauthServerType.NAVER;
     }
-
-
-
-
 
     @Override
     public String provide() {

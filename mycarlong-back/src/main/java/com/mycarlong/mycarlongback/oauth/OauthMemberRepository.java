@@ -1,4 +1,4 @@
-package com.mycarlong.mycarlongback.kakao;
+package com.mycarlong.mycarlongback.oauth;
 
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;

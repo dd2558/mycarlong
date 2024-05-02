@@ -1,4 +1,4 @@
-package com.mycarlong.mycarlongback.kakao;
+package com.mycarlong.mycarlongback.oauth;
 
 import org.springframework.core.convert.converter.Converter;
 

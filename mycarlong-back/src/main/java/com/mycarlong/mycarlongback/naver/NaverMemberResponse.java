@@ -1,11 +1,11 @@
 package com.mycarlong.mycarlongback.naver;
 
-import static com.mycarlong.mycarlongback.kakao.OauthServerType.NAVER;
+import static com.mycarlong.mycarlongback.oauth.OauthServerType.NAVER;
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategies.SnakeCaseStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
-import com.mycarlong.mycarlongback.kakao.OauthId;
-import com.mycarlong.mycarlongback.kakao.OauthMember;
+import com.mycarlong.mycarlongback.oauth.OauthId;
+import com.mycarlong.mycarlongback.oauth.OauthMember;
 
 @JsonNaming(value = SnakeCaseStrategy.class)
 public record NaverMemberResponse(

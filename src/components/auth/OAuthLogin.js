@@ -81,7 +81,7 @@ const OAuthLogin = () => {
     if(provider=='kakao'){
       window.location.href = `http://localhost:8080/oauth/kakao`;
     } else if(provider=='google'){
-      window.location.href = ``; 
+      window.location.href = `http://localhost:8080/oauth/google`; 
     } else if(provider=='naver'){
       window.location.href = `http://localhost:8080/oauth/naver`;
     }

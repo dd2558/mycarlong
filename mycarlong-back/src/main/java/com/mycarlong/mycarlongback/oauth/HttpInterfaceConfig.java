@@ -1,4 +1,4 @@
-package com.mycarlong.mycarlongback.kakao;
+package com.mycarlong.mycarlongback.oauth;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -6,6 +6,8 @@ import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.support.WebClientAdapter;
 import org.springframework.web.service.invoker.HttpServiceProxyFactory;
 
+import com.mycarlong.mycarlongback.google.GoogleApiClient;
+import com.mycarlong.mycarlongback.kakao.KakaoApiClient;
 import com.mycarlong.mycarlongback.naver.NaverApiClient;
 
 @Configuration
@@ -19,6 +21,11 @@ public class HttpInterfaceConfig {
     @Bean
     public NaverApiClient naverApiClient() {
         return createHttpInterface(NaverApiClient.class);
+    }
+
+    @Bean
+    public GoogleApiClient googleApiClient(){
+        return createHttpInterface(GoogleApiClient.class);
     }
 
     private <T> T createHttpInterface(Class<T> clazz) {

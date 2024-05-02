@@ -7,6 +7,10 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
+import com.mycarlong.mycarlongback.oauth.OauthMember;
+import com.mycarlong.mycarlongback.oauth.OauthMemberClient;
+import com.mycarlong.mycarlongback.oauth.OauthServerType;
+
 @Component
 @RequiredArgsConstructor
 public class KakaoMemberClient implements OauthMemberClient {
