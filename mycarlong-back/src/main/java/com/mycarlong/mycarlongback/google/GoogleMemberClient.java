@@ -1,5 +1,8 @@
 package com.mycarlong.mycarlongback.google;
 
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -42,7 +45,7 @@ public class GoogleMemberClient implements OauthMemberClient {
         params.add("grant_type", "authorization_code");
         params.add("client_id", googleOauthConfig.clientId());
         params.add("redirect_uri", googleOauthConfig.redirectUri());
-        params.add("code", authCode);
+        params.add("code", URLEncoder.encode(authCode, StandardCharsets.UTF_8));
         params.add("client_secret", googleOauthConfig.clientSecret());
         logger.info("params {} ", params);
         return params;
