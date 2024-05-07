@@ -60,9 +60,6 @@ public class SecurityConfig{
         // CSRF 비활성화
         http.csrf((csrf) -> csrf.disable());
 
-        // Form 기반 로그인 비활성화
-        http.formLogin((formLogin) -> formLogin.disable());
-
         // HTTP Basic 인증 비활성화
         http.httpBasic((httpBasic) -> httpBasic.disable());
 
