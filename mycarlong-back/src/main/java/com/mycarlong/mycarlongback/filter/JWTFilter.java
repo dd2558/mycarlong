@@ -95,10 +95,10 @@ public class JWTFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 
-    private static void ReAuth(String username, String role) {
+    private static void ReAuth(String name, String role) {
         // UserDTO를 생성하고 값 설정
         UserDTO userDTO = new UserDTO();
-        userDTO.setUsername(username);
+        userDTO.setName(name);
         userDTO.setRole(role);
 
         // CustomOAuth2User를 사용하여 사용자 정보 객체 생성

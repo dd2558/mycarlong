@@ -64,12 +64,11 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
         logger.info("username {}", username);
 
         // 사용자가 데이터베이스에 이미 존재하는지 확인합니다.
-        UserEntity existData = userRepository.findByUsername(username);
+        UserEntity existData = userRepository.findByEmail(username);
 
         if (existData == null) {
             // 데이터베이스에 사용자가 없으면 새로운 사용자 엔티티를 만들고 저장합니다.
             UserEntity userEntity = new UserEntity();
-            userEntity.setUsername(username);
             userEntity.setEmail(oAuth2Response.getEmail());
             userEntity.setName(oAuth2Response.getName());
             if (registrationId.equals("kakao")){
@@ -80,7 +79,6 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
 
             // 새로운 사용자의 DTO를 생성하고 반환합니다.
             UserDTO userDTO = new UserDTO();
-            userDTO.setUsername(username);
             userDTO.setName(oAuth2Response.getName());
             if (registrationId.equals("kakao")){
                 userDTO.setName((String) ((Map) oAuth2User.getAttributes().get("properties")).get("nickname"));
@@ -98,7 +96,7 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
 
             // 업데이트된 사용자의 DTO를 생성하고 반환합니다.
             UserDTO userDTO = new UserDTO();
-            userDTO.setUsername(existData.getUsername());
+            userDTO.setPassword(existData.getPassword());
             userDTO.setName(oAuth2Response.getName());
             if (registrationId.equals("kakao")){
                 userDTO.setName((String) ((Map) oAuth2User.getAttributes().get("properties")).get("nickname"));
